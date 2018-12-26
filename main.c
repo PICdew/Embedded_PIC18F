@@ -318,7 +318,7 @@ BOOL CheckButtonPressed(void)
 
     if(PORTBbits.RB0 == 0)								//RB0 == 0 - button press						
     {
-		oledWriteChar1x(press,1,4*10) ;
+		oledWriteChar1x(press,0,5*10) ;
         if(buttonPressCounter++ > 10)
         {
             buttonPressCounter = 0;
@@ -327,7 +327,7 @@ BOOL CheckButtonPressed(void)
     }
     else
     {	
-		oledWriteChar1x(notPress,1,4*10) ;
+		oledWriteChar1x(notPress,0,5*10) ;
         if(buttonPressed == TRUE)
         {
             if(buttonPressCounter == 0)
@@ -370,26 +370,28 @@ void main(void)
 	static char toprint2[120];
 	int a2d, acc, scroll;	
 	unsigned int left, right;
+	
+	///accelerometer
+	BMA150_XYZ xy;
+	BYTE xyArr[20];	
+	BYTE lsb, msb;
+	static BYTE g_range = 0;
+
+	InitBma150();
     InitializeSystem();
 	
 		
 
     while(1)												//Main is Usualy an Endless Loop
-    {
-   		
-		//button press
-		CheckButtonPressed();								//Wait for Push-button to be pressed and released
-
+    {	
 		//potentiometer
 		ADCON0 = 0b00010011;								//AN4
 		a2d = (int)(ADRESH << 0) + ADRESL;
 		sprintf(toprint, "%d", a2d);						
 		oledPutString(toprint, 2, 2*2);						
-
-		//accelerometer
-		/*acc = (int)BMA150_ReadByte(0x08);
-		sprintf(toprint2, "%d", acc );						
-		oledPutString(toprint2, 4, 2*2);*/					
+			
+		//button press
+		CheckButtonPressed();								//Wait for Push-button to be pressed and released
 
 		//L\R & scroll
 		right  = mTouchReadButton(0);
@@ -397,25 +399,36 @@ void main(void)
 		scroll = mTouchReadButton(1);
 		ADCON0 = 0b00010011;								//because mTouchReadButton use A2D	
 
-		if(left > 800){										//chack left touch	
-			oledWriteChar1x(0X6C, 1, 6*10);				
-		}else{					
-			oledWriteChar1x(0x4C, 1, 6*10);
-		}
+		if(left > 800){oledWriteChar1x(0X6C, 0, 6*10);}		//chack left touch								
+		else{oledWriteChar1x(0x4C, 0, 6*10);}
 
-		if(right > 800){									//chack left touch
-			oledWriteChar1x(0X72, 1, 7*10);
-		}else{					
-			oledWriteChar1x(0X52, 1, 7*10);
-		}
+		if(right > 800){oledWriteChar1x(0X72, 0, 7*10);}	//chack left touch
+		else{oledWriteChar1x(0X52, 0, 7*10);}
 
-		if(scroll > 960){									//chack  scroll
+		/*if(scroll > 960){									//chack  scroll
 			oledWriteChar1x(0X55, 1, 9*10);
 		}else if(scroll < 960){					
 			oledWriteChar1x(0x20, 1, 9*10);
 		}else if(scroll == 960){
 			oledWriteChar1x(0x25, 1, 9*10);
-		}	
+		}	*/
+		
+		//accelerometer
+		//Get x 	
+		lsb = BMA150_ReadByte(BMA150_ACC_X_LSB); 
+		msb = BMA150_ReadByte(BMA150_ACC_X_MSB); 	
+		xy.x = 0;
+		xy.x = (short)msb << 8;
+		sprintf((char*)xyArr, "x: %2d.%d", xy.x/10, (xy.x > 0 ? xy.x%10 : xy.x*-1%10));
+		oledPutString(xyArr, 4, 0);
+
+		//Get y 
+		lsb = BMA150_ReadByte(BMA150_ACC_Y_LSB); 
+		msb = BMA150_ReadByte(BMA150_ACC_Y_MSB); 
+		xy.y = 0;
+		xy.y = (short)msb << 8;
+		sprintf((char*)xyArr, "Y: %2d.%d", xy.y/10, (xy.y > 0 ? xy.y%10 : xy.y*-1%10));
+		oledPutString(xyArr, 5, 0);
 		
     }
 }//end main
