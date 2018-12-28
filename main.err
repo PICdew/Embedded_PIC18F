@@ -1,9 +1,15 @@
-Warning[2066] D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c 390 : type qualifier mismatch in assignment
-Warning[2054] D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c 391 : suspicious pointer conversion
-Warning[2066] D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c 422 : type qualifier mismatch in assignment
-Warning[2066] D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c 430 : type qualifier mismatch in assignment
-Warning[2065] D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c 431 : static function 'YourLowPriorityISRCode' never referenced
-Warning[2065] D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c 431 : static function 'YourHighPriorityISRCode' never referenced
-Warning[2065] D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c 431 : static function 'YourLowPriorityISRCode' never referenced
-Warning[2065] D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c 431 : static function 'YourHighPriorityISRCode' never referenced
-Warning[2064] D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c 431 : static function 'ProcessIO' not defined
+Warning[2066] D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c 322 : type qualifier mismatch in assignment
+Warning[2054] D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c 323 : suspicious pointer conversion
+Warning[2066] D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c 333 : type qualifier mismatch in assignment
+Warning[2054] D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c 334 : suspicious pointer conversion
+Warning[2066] D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c 394 : type qualifier mismatch in assignment
+Warning[2054] D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c 395 : suspicious pointer conversion
+Warning[2066] D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c 432 : type qualifier mismatch in assignment
+Warning[2063] D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c 439 : '.' operator expected, not '->'
+Warning[2063] D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c 440 : '.' operator expected, not '->'
+Warning[2066] D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c 446 : type qualifier mismatch in assignment
+Warning[2065] D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c 447 : static function 'YourLowPriorityISRCode' never referenced
+Warning[2065] D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c 447 : static function 'YourHighPriorityISRCode' never referenced
+Warning[2065] D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c 447 : static function 'YourLowPriorityISRCode' never referenced
+Warning[2065] D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c 447 : static function 'YourHighPriorityISRCode' never referenced
+Warning[2064] D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c 447 : static function 'ProcessIO' not defined
