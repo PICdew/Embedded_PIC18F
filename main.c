@@ -314,7 +314,7 @@ BOOL CheckButtonPressed(void)
     static unsigned long buttonPressCounter = 0;		
 	static char toprint[];
 	char string [20] = "Button:";
-	char press = 0X50;									
+	char press = 0x50;									
 	char notPress = 0x4F;
 
     if(PORTBbits.RB0 == 0)														
@@ -352,7 +352,30 @@ BOOL CheckButtonPressed(void)
 }
 
 
+cahckPotNumbeer(int a2d)
+{
+	int i;
+	int temp = a2d;
+	oledWriteChar1x(0x5B, 1 + 0xB0,40);
+	oledWriteChar1x(0x5D, 1 + 0xB0,100);
+	oledWriteChar1x(0x5D, 1 + 0xB0,100);
+	for(i = 45; i <= 95;i++)
+	{
+		oledWriteChar1x(0x2D, 1 + 0xB0,i);
+	}
+	if(a2d < 326){
+		/*if(a2d == 0){
+			oledWriteChar1x(0x4F, 1 + 0xBF0,45.5);
+			return;
+		}*/
+		oledWriteChar1x(0x4F, 1 + 0xBF0,(int)(45+(a2d*100/1076)));
+	}else if(a2d > 326 && a2d < 770)
+	{
+		oledWriteChar1x(0x4F, 1 + 0xBF0,(int)(45*4+(a2d*100/1076)));
+	}
 
+
+}
 
 /********************************************************************
  * Function:        void main(void)
@@ -371,8 +394,7 @@ BOOL CheckButtonPressed(void)
  *******************************************************************/
 void main(void)
 {
-	static char toprint[];
-	static char toprint2[];
+	BYTE str[30] = "";
 	int a2d, acc, scrollU, scrollD;	
 	unsigned int left, right;
 	
@@ -389,10 +411,12 @@ void main(void)
     while(1)												//Main is Usualy an Endless Loop
     {	
 		/**************************************potentiometer************************************/
-		ADCON0 = 0b00010011;								
-		a2d = (int)(ADRESH << 0) + ADRESL;
-		sprintf(toprint, "%d", a2d);						
-		oledPutString(toprint, 1, 0);						
+		ADCON0bits.CHS = 4;		// Select ADC channel 4(AN4)
+		ADCON0bits.GO = 1;		// Begin conversion
+		while(ADCON0bits.GO);
+		sprintf((char*)str, "%d", ADRES << 0);						
+		oledPutString(str, 1, 0);
+		cahckPotNumbeer(ADRES);						
 			
 		/**************************************button press************************************/
 		CheckButtonPressed();								
@@ -436,13 +460,6 @@ void main(void)
 		lsb = BMA150_ReadByte(BMA150_ACC_Y_LSB); 
 		msb = BMA150_ReadByte(BMA150_ACC_Y_MSB); 
 		xyz.y = (short)msb << 8;
-		xyz->y |= lsb;
-		xyz->y >>= 6;
-		if(xyz->y & 0x200)
-		{
-			xyz->y |= 0xFC00;
-		}
-		xyz->y = 10*xyz->y * 8 / 512;
 		sprintf((char*)xyArr, "Y: %2d.%d", xyz.y/10, (xyz.y > 0 ? xyz.y%10 : xyz.y*-1%10));
 		oledPutString(xyArr, 6, 0);
 		
