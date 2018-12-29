@@ -353,13 +353,23 @@ BOOL CheckButtonPressed(void)
 }
 
 
-cahckPotNumbeer(int adres)
+potentiometer()
 {
 	int i;
-	int temp;
 	BYTE str[30];
+
+	ADCON0bits.CHS = 4;		
+	ADCON0bits.GO = 1;	
+	while(ADCON0bits.GO);
+	sprintf((char*)str, "%d", ADRES);					
+	oledPutString(str, 1, 0);
+
+	if(ADRES < 1000){oledWriteChar1x(0x20, 1 + 0xB0, 18);}
+	if(ADRES < 100){oledWriteChar1x(0x20, 1 + 0xB0, 12);}
+	if(ADRES < 10){oledWriteChar1x(0x20, 1 + 0xB0, 6);}
+
+	//bar graph
 	oledWriteChar1x(0x5B, 1 + 0xB0,30);
-	oledWriteChar1x(0x5D, 1 + 0xB0,80);
 	oledWriteChar1x(0x5D, 1 + 0xB0,80);
 
 	for(i = 35; i <= 75;i++)
@@ -367,16 +377,49 @@ cahckPotNumbeer(int adres)
 		oledWriteChar1x(0x2D, 1 + 0xB0,i);
 	}
 
-	if(adres == 0){
+	if(ADRES == 0){
 		oledWriteChar1x(0x4F, 1 + 0xBF0,35);
 		return;
 	}
 
-	temp = adres/50;					
-	if(adres){
-		oledWriteChar1x(0x4F, 1 + 0xBF0,35+temp*2);
-	}
+						
+	if(ADRES){
+		oledWriteChar1x(0x4F, 1 + 0xBF0,35+(ADRES/50*2));
+	}	
+}
+
+touchButtons()
+{
+	unsigned int left, right,scrollU, scrollD;;
+
+	right  = mTouchReadButton(0);
+	left   = mTouchReadButton(3);
+	scrollU = mTouchReadButton(1);
+	scrollD = mTouchReadButton(2);
+	ADCON0 = 0b00010011;								//because mTouchReadButton use A2D	
+
+	//chack left touch
+	if(left > 800){oledWriteChar1x(0X6C, 2 + 0xB0, 10*10);}										
+	else{oledWriteChar1x(0x4C, 2 + 0xB0, 10*10);}
 	
+	//chack left touch
+	if(right > 800){oledWriteChar1x(0X72, 2 + 0xB01, 12*10);}	
+	else{oledWriteChar1x(0X52,2 + 0xB0 , 12*10);}
+
+	//chack  scroll
+	if(scrollU > 965){									
+		oledWriteChar1x(0x55, 1 + 0xB0, 11*10);
+	}
+	if(scrollU < 960){					
+		oledWriteChar1x(0x20, 1 + 0xB0, 11*10);	
+	}
+	if(scrollD > 980){
+		oledWriteChar1x(0x51, 3 + 0xB0, 11*10);
+	}
+	if(scrollD < 975){
+		oledWriteChar1x(0x20, 3 + 0xB0, 11*10);
+	}
+
 }
 
 /********************************************************************
@@ -396,10 +439,8 @@ cahckPotNumbeer(int adres)
  *******************************************************************/
 void main(void)
 {
-	BYTE str[30] = "";
-	int a2d, acc, scrollU, scrollD;	
-	unsigned int left, right;
-	
+	int a2d, acc;	
+	BYTE str[30];
 	///accelerometer
 	BMA150_XYZ xyz;
 	BYTE xyArr[20];	
@@ -414,48 +455,13 @@ void main(void)
     while(1)												//Main is Usualy an Endless Loop
     {	
 		/**************************************potentiometer************************************/
-		ADCON0bits.CHS = 4;		// Select ADC channel 4(AN4)
-		ADCON0bits.GO = 1;		// Begin conversion
-		while(ADCON0bits.GO);
-		sprintf((char*)str, "%d", ADRES);					
-		oledPutString(str, 1, 0);
-		
-		if(ADRES < 1000){oledWriteChar1x(0x20, 1 + 0xB0, 18);}
-		if(ADRES < 100){oledWriteChar1x(0x20, 1 + 0xB0, 12);}
-		if(ADRES < 10){oledWriteChar1x(0x20, 1 + 0xB0, 6);}
-		
-		cahckPotNumbeer(ADRES);
-		
-						
+		potentiometer();			
 			
 		/**************************************button press************************************/
 		CheckButtonPressed();								
 
 		/**************************************L\R & scroll************************************/
-		right  = mTouchReadButton(0);
-		left   = mTouchReadButton(3);
-		scrollU = mTouchReadButton(1);
-		scrollD = mTouchReadButton(2);
-		ADCON0 = 0b00010011;								//because mTouchReadButton use A2D	
-
-		//chack left touch
-		if(left > 800){oledWriteChar1x(0X6C, 2 + 0xB0, 10*10);}										
-		else{oledWriteChar1x(0x4C, 2 + 0xB0, 10*10);}
-		
-		//chack left touch
-		if(right > 800){oledWriteChar1x(0X72, 2 + 0xB01, 12*10);}	
-		else{oledWriteChar1x(0X52,2 + 0xB0 , 12*10);}
-
-		//chack  scroll
-		if(scrollU > 950){									
-			oledWriteChar1x(0x55, 1 + 0xB01, 11*10);
-		}else if(scrollU < 950){					
-			oledWriteChar1x(0x20, 1 + 0xB0, 11*10);	
-		}else if(scrollD > 970){
-			oledWriteChar1x(0x51, 3 + 0xB01, 11*10);
-		}else if(scrollD < 970){
-			oledWriteChar1x(0x20, 3 + 0xB0, 11*10);
-		}
+		touchButtons();
 		
 		/*******************************************accelerometer************************************/
 		//Get x 	
