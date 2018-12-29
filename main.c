@@ -347,8 +347,6 @@ BOOL CheckButtonPressed(void)
             }
         }
     }
-	
-	
     return FALSE;
 }
 
@@ -441,10 +439,11 @@ void main(void)
 {
 	int a2d, acc;	
 	BYTE str[30];
+
 	///accelerometer
 	BMA150_XYZ xyz;
 	BYTE xyArr[20];	
-	BYTE lsb, msb;
+	BYTE lsb, msb, temperature;
 	
 	
 	InitBma150();
@@ -479,6 +478,11 @@ void main(void)
 		sprintf((char*)xyArr, "Y: %2d.%d", xyz.y/10, (xyz.y > 0 ? xyz.y%10 : xyz.y*-1%10));
 		oledPutString(xyArr, 6, 0);
 		
+		/******************************************temperature*************************************/
+		temperature = BMA150_ReadByte(BMA150_TEMP);
+		temperature = (temperature - 32) / 1.8;
+		sprintf((char*)str, "temp: %d", temperature);
+		oledPutString(str, 7, 0);
 		
     }
 }//end main
