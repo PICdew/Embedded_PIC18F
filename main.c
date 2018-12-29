@@ -59,7 +59,8 @@
 
 #include "soft_start.h"
 
-
+#include <stdio.h>
+#include <stdlib.h>
 //	========================	CONFIGURATION	========================
 
 #if defined(PIC18F46J50_PIM)
@@ -352,29 +353,30 @@ BOOL CheckButtonPressed(void)
 }
 
 
-cahckPotNumbeer(int a2d)
+cahckPotNumbeer(int adres)
 {
 	int i;
-	int temp = a2d;
-	oledWriteChar1x(0x5B, 1 + 0xB0,40);
-	oledWriteChar1x(0x5D, 1 + 0xB0,100);
-	oledWriteChar1x(0x5D, 1 + 0xB0,100);
-	for(i = 45; i <= 95;i++)
+	int temp;
+	BYTE str[30];
+	oledWriteChar1x(0x5B, 1 + 0xB0,30);
+	oledWriteChar1x(0x5D, 1 + 0xB0,80);
+	oledWriteChar1x(0x5D, 1 + 0xB0,80);
+
+	for(i = 35; i <= 75;i++)
 	{
 		oledWriteChar1x(0x2D, 1 + 0xB0,i);
 	}
-	if(a2d < 326){
-		/*if(a2d == 0){
-			oledWriteChar1x(0x4F, 1 + 0xBF0,45.5);
-			return;
-		}*/
-		oledWriteChar1x(0x4F, 1 + 0xBF0,(int)(45+(a2d*100/1076)));
-	}else if(a2d > 326 && a2d < 770)
-	{
-		oledWriteChar1x(0x4F, 1 + 0xBF0,(int)(45*4+(a2d*100/1076)));
+
+	if(adres == 0){
+		oledWriteChar1x(0x4F, 1 + 0xBF0,35);
+		return;
 	}
 
-
+	temp = adres/50;					
+	if(adres){
+		oledWriteChar1x(0x4F, 1 + 0xBF0,35+temp*2);
+	}
+	
 }
 
 /********************************************************************
@@ -403,6 +405,7 @@ void main(void)
 	BYTE xyArr[20];	
 	BYTE lsb, msb;
 	
+	
 	InitBma150();
     InitializeSystem();
 	
@@ -414,9 +417,16 @@ void main(void)
 		ADCON0bits.CHS = 4;		// Select ADC channel 4(AN4)
 		ADCON0bits.GO = 1;		// Begin conversion
 		while(ADCON0bits.GO);
-		sprintf((char*)str, "%d", ADRES << 0);						
+		sprintf((char*)str, "%d", ADRES);					
 		oledPutString(str, 1, 0);
-		cahckPotNumbeer(ADRES);						
+		
+		if(ADRES < 1000){oledWriteChar1x(0x20, 1 + 0xB0, 18);}
+		if(ADRES < 100){oledWriteChar1x(0x20, 1 + 0xB0, 12);}
+		if(ADRES < 10){oledWriteChar1x(0x20, 1 + 0xB0, 6);}
+		
+		cahckPotNumbeer(ADRES);
+		
+						
 			
 		/**************************************button press************************************/
 		CheckButtonPressed();								
