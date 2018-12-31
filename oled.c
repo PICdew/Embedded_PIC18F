@@ -335,31 +335,11 @@ void oledPutImage(rom unsigned char *ptr, unsigned char sizex, unsigned char siz
 	
 void oledRepeatByte(BYTE b, int repeat, unsigned char page, unsigned char column)
 {
-	int k;
-
-	/*page = page + 0xB0;
-	WriteCommand(page);
-
-	column += OFFSET;
-	WriteCommand(0x00+(column&0x0F));
-	WriteCommand(0x10+((column>>4)&0x0F));
-	*/
 	
-
-/*	for(k=0;k<15;k++){
-		
-		WriteData(0x18);	// Write first column
-
-	}
-	//WriteData(0x00);	/*iteData(0x00);	// Write 1 column for buffer to next character
-	page = page + 0xB0;
-	WriteCommand(page);
-	column += OFFSET;
-	WriteCommand(0x00+(column&0x0F));
-	WriteCommand(0x10+((column>>4)&0x0F));
-	*/
 	
 }
+
+
 
 //////////////////////////////////////
 //////////////////////////////////////
@@ -457,6 +437,7 @@ ROM BYTE g_pucFont[95][5] =
     { 0x1c, 0x20, 0x40, 0x20, 0x1c }, // v   0X76
     { 0x3c, 0x40, 0x30, 0x40, 0x3c }, // w   0X77
     { 0x44, 0x28, 0x10, 0x28, 0x44 }, // x   0X78
+	//my private char
     { 0x00, 0x7f, 0x7f, 0x7f, 0x00 }, // |   0X79
     { 0xc0, 0xc0, 0xc0, 0xc0, 0xc0 }, // button open   0X7A
     { 0xc0, 0xf8, 0xf8, 0xf8, 0xc0 }, // button push   0X7B
