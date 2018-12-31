@@ -332,12 +332,7 @@ void oledPutImage(rom unsigned char *ptr, unsigned char sizex, unsigned char siz
 	return;
 }
 
-	
-void oledRepeatByte(BYTE b, int repeat, unsigned char page, unsigned char column)
-{
-	
-	
-}
+
 
 
 

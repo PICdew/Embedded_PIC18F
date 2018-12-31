@@ -418,8 +418,12 @@ void touchButtons()
 void accelerometer()
 {
 	BMA150_XYZ xyz;
-	BYTE xyArr[20];	
+	char xyArr[20] = {0};	
 	BYTE lsb, msb;
+	int i;	
+
+	for(i=13;i <= 40;i++)
+		oledWriteChar1x(0x20, 4 + 0xB0, i);
 
 	//accX
 	lsb = BMA150_ReadByte(BMA150_ACC_X_LSB); 	
@@ -439,8 +443,8 @@ void accelerometer()
 	oledPutROMString((ROM_STRING)"X: ",4,0);
 	oledPutString(xyArr, 4, 15);
 
-	if(xyz.x<1000)
-		oledWriteChar1x(0x20, 4 + 0xB0, 32);
+	for(i=13;i <= 40;i++)
+		oledWriteChar1x(0x20, 5 + 0xB0, i);
 
 	//accY
 	lsb = BMA150_ReadByte(BMA150_ACC_Y_LSB); 	
@@ -459,9 +463,9 @@ void accelerometer()
 	itoa(xyz.y, xyArr);
 	oledPutROMString((ROM_STRING)"Y: ",5,0);
 	oledPutString(xyArr, 5, 15);
+	
 
-	if(xyz.y<1000)
-		oledWriteChar1x(0x20, 5 + 0xB0, 32);
+
 }
 
 void temperature()
@@ -519,9 +523,6 @@ void main(void)
 
 		/*******************************************accelerometer************************************/
 		accelerometer();
-
-		/*************** test oled print ********************/
-		oledRepeatByte(0x18, 5, 3, 11*10);
 		
     }
 }//end main
