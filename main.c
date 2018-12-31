@@ -266,7 +266,7 @@ void UserInit(void)
   /* Initialize the oLED Display */
    ResetDevice();  
    FillDisplay(0x00);
-   oledPutROMString((ROM_STRING)" PIC18F Starter Kit  ",0,0);
+   //oledPutROMString((ROM_STRING)" PIC18F Starter Kit  ",0,0);
 }//end UserInit
 
 
@@ -315,14 +315,14 @@ BOOL CheckButtonPressed(void)
     static unsigned long buttonPressCounter = 0;		
 	static char toprint[];
 	char string [20] = "Button:";
-	char press = 0x50;									
-	char notPress = 0x4F;
+	char notPress = 0x7b;									
+	char press = 0x7a;
 
     if(PORTBbits.RB0 == 0)														
     {
 		sprintf(toprint, "%s", string);						
-		oledPutString(toprint, 3, 0);
-		oledWriteChar1x(press, 3 + 0xB0,45) ;
+		oledPutString(toprint, 2, 0);
+		oledWriteChar1x(press, 2 + 0xB0,45) ;
         if(buttonPressCounter++ > 10)
         {
             buttonPressCounter = 0;
@@ -332,8 +332,8 @@ BOOL CheckButtonPressed(void)
     else
     {	
 		sprintf(toprint, "%s", string);						
-		oledPutString(toprint, 3, 0);
-		oledWriteChar1x(notPress, 3 + 0xB0,45) ;
+		oledPutString(toprint, 2, 0);
+		oledWriteChar1x(notPress, 2 + 0xB0,45) ;
         if(buttonPressed == TRUE)
         {
             if(buttonPressCounter == 0)
@@ -360,29 +360,29 @@ void potentiometer()
 	ADCON0bits.GO = 1;	
 	while(ADCON0bits.GO);
 	sprintf((char*)str, "%d", ADRES);					
-	oledPutString(str, 1, 0);
+	oledPutString(str, 0, 0);
 
-	if(ADRES < 1000){oledWriteChar1x(0x20, 1 + 0xB0, 18);}
-	if(ADRES < 100){oledWriteChar1x(0x20, 1 + 0xB0, 12);}
-	if(ADRES < 10){oledWriteChar1x(0x20, 1 + 0xB0, 6);}
+	if(ADRES < 1000){oledWriteChar1x(0x20, 0 + 0xB0, 18);}
+	if(ADRES < 100){oledWriteChar1x(0x20, 0 + 0xB0, 12);}
+	if(ADRES < 10){oledWriteChar1x(0x20, 0 + 0xB0, 6);}
 
 	//bar graph
-	oledWriteChar1x(0x5B, 1 + 0xB0,30);
-	oledWriteChar1x(0x5D, 1 + 0xB0,80);
+	oledWriteChar1x(0x5B, 0 + 0xB0,30);
+	oledWriteChar1x(0x5D, 0 + 0xB0,80);
 
 	for(i = 35; i <= 75;i++)
 	{
-		oledWriteChar1x(0x2D, 1 + 0xB0,i);
+		oledWriteChar1x(0x2D, 0 + 0xB0,i);
 	}
 
 	if(ADRES == 0){
-		oledWriteChar1x(0x4F, 1 + 0xBF0,35);
+		oledWriteChar1x(0x4F, 0 + 0xBF0,35);
 		return;
 	}
 
 						
 	if(ADRES){
-		oledWriteChar1x(0x4F, 1 + 0xBF0,35+(ADRES/50*2));
+		oledWriteChar1x(0x4F, 0 + 0xBF0,35+(ADRES/50*2));
 	}	
 }
 
@@ -396,6 +396,7 @@ void touchButtons()
 	scrollD = mTouchReadButton(2);
 	ADCON0 = 0b00010011;								//because mTouchReadButton use A2D	
 
+	oledWriteChar1x(0x79, 2 + 0xB0, 11*10);
 	//chack left touch
 	if(left > 800){oledWriteChar1x(0X6C, 2 + 0xB0, 10*10);}										
 	else{oledWriteChar1x(0x4C, 2 + 0xB0, 10*10);}
@@ -409,13 +410,13 @@ void touchButtons()
 		oledWriteChar1x(0x7d, 1 + 0xB0, 11*10);
 	}
 	if(scrollU < 960){					
-		oledWriteChar1x(0x20, 1 + 0xB0, 11*10);	
+		oledWriteChar1x(0x55, 1 + 0xB0, 11*10);	
 	}
 	if(scrollD > 980){
 		oledWriteChar1x(0x7c, 3 + 0xB0, 11*10);
 	}
 	if(scrollD < 975){
-		oledWriteChar1x(0x20, 3 + 0xB0, 11*10);
+		oledWriteChar1x(0x44, 3 + 0xB0, 11*10);
 	}
 
 }
@@ -431,6 +432,7 @@ void temperature()
 	oledPutString(str, 7, 0);
 	oledWriteCharRaw(0x7e);
 	oledWriteCharRaw(0x43);
+
 }
 
 /********************************************************************
@@ -477,7 +479,7 @@ void main(void)
 		/******************************************temperature*************************************/
 		temperature();
 
-		oledRepeatByte(0x18, 5, 7, 11*10);
+		oledRepeatByte(0x18, 5, 3, 11*10);
 		
 		/*******************************************accelerometer************************************/
 		//Get x 	
@@ -486,14 +488,14 @@ void main(void)
 		xyz.x = 0;
 		xyz.x = (short)msb << 8;
 		sprintf((char*)xyArr, "x: %2d.%d", xyz.x/10, (xyz.x > 0 ? xyz.x%10 : xyz.x*-1%10));
-		oledPutString(xyArr, 5, 0);
+		oledPutString(xyArr, 4, 0);
 
 		//Get y 
 		lsb = BMA150_ReadByte(BMA150_ACC_Y_LSB); 
 		msb = BMA150_ReadByte(BMA150_ACC_Y_MSB); 
 		xyz.y = (short)msb << 8;
 		sprintf((char*)xyArr, "Y: %2d.%d", xyz.y/10, (xyz.y > 0 ? xyz.y%10 : xyz.y*-1%10));
-		oledPutString(xyArr, 6, 0);
+		oledPutString(xyArr, 5, 0);
 		
 		
     }
