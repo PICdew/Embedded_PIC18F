@@ -351,7 +351,7 @@ BOOL CheckButtonPressed(void)
 }
 
 
-potentiometer()
+void potentiometer()
 {
 	int i;
 	BYTE str[30];
@@ -386,7 +386,7 @@ potentiometer()
 	}	
 }
 
-touchButtons()
+void touchButtons()
 {
 	unsigned int left, right,scrollU, scrollD;;
 
@@ -406,18 +406,31 @@ touchButtons()
 
 	//chack  scroll
 	if(scrollU > 965){									
-		oledWriteChar1x(0x55, 1 + 0xB0, 11*10);
+		oledWriteChar1x(0x7d, 1 + 0xB0, 11*10);
 	}
 	if(scrollU < 960){					
 		oledWriteChar1x(0x20, 1 + 0xB0, 11*10);	
 	}
 	if(scrollD > 980){
-		oledWriteChar1x(0x51, 3 + 0xB0, 11*10);
+		oledWriteChar1x(0x7c, 3 + 0xB0, 11*10);
 	}
 	if(scrollD < 975){
 		oledWriteChar1x(0x20, 3 + 0xB0, 11*10);
 	}
 
+}
+
+void temperature()
+{
+	BYTE temperature;
+	BYTE str[30];	
+
+	temperature = BMA150_ReadByte(BMA150_TEMP);
+	temperature = (temperature - 32) / 1.8;
+	sprintf((char*)str, "temp: %d", temperature);
+	oledPutString(str, 7, 0);
+	oledWriteCharRaw(0x7e);
+	oledWriteCharRaw(0x43);
 }
 
 /********************************************************************
@@ -438,12 +451,11 @@ touchButtons()
 void main(void)
 {
 	int a2d, acc;	
-	BYTE str[30];
 
 	///accelerometer
 	BMA150_XYZ xyz;
 	BYTE xyArr[20];	
-	BYTE lsb, msb, temperature;
+	BYTE lsb, msb;
 	
 	
 	InitBma150();
@@ -461,6 +473,11 @@ void main(void)
 
 		/**************************************L\R & scroll************************************/
 		touchButtons();
+
+		/******************************************temperature*************************************/
+		temperature();
+
+		oledRepeatByte(0x18, 5, 7, 11*10);
 		
 		/*******************************************accelerometer************************************/
 		//Get x 	
@@ -478,11 +495,6 @@ void main(void)
 		sprintf((char*)xyArr, "Y: %2d.%d", xyz.y/10, (xyz.y > 0 ? xyz.y%10 : xyz.y*-1%10));
 		oledPutString(xyArr, 6, 0);
 		
-		/******************************************temperature*************************************/
-		temperature = BMA150_ReadByte(BMA150_TEMP);
-		temperature = (temperature - 32) / 1.8;
-		sprintf((char*)str, "temp: %d", temperature);
-		oledPutString(str, 7, 0);
 		
     }
 }//end main

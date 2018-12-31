@@ -333,7 +333,28 @@ void oledPutImage(rom unsigned char *ptr, unsigned char sizex, unsigned char siz
 }
 
 	
+void oledRepeatByte(BYTE b, int repeat, unsigned char page, unsigned char column)
+{
+	int k;
 
+	page = page + 0xB0;
+	WriteCommand(page);
+
+	column += OFFSET;
+	WriteCommand(0x00+(column&0x0F));
+	WriteCommand(0x10+((column>>4)&0x0F));
+
+	for(k=0;k<15;k++)
+	{
+		WriteData(0x18);	// Write first column
+		
+	}
+	WriteData(0x00);	// Write 1 column for buffer to next character
+	
+	//put char with our command
+	//oledWriteCharRaw(WriteData(0x18));
+	
+}
 
 //////////////////////////////////////
 //////////////////////////////////////
@@ -434,7 +455,7 @@ ROM BYTE g_pucFont[95][5] =
     { 0x0c, 0x50, 0x50, 0x50, 0x3c }, // y   0X79
     { 0x44, 0x64, 0x54, 0x4c, 0x44 }, // z   0X7A
     { 0x00, 0x08, 0x36, 0x41, 0x00 }, // {   0X7B
-    { 0x00, 0x00, 0x7f, 0x00, 0x00 }, // |   0X7C
-    { 0x00, 0x41, 0x36, 0x08, 0x00 }, // }   0X7D
-    { 0x02, 0x01, 0x02, 0x04, 0x02 }, // ~   0X7E
+    { 0x20, 0x40, 0xff, 0x40, 0x20 }, // ?   0X7C
+    { 0x04, 0x02, 0xff, 0x02, 0x04 }, // ?   0X7D
+    { 0x00, 0x02, 0x05, 0x02, 0x00 }, // °   0X7E
 };
