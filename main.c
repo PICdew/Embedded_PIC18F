@@ -228,7 +228,7 @@ BOOL CheckButtonPressed(void);
 #endif
 
 
-
+static int counterX = 0, counterY = 0;
 
 //	========================	Board Initialization Code	========================
 #pragma code
@@ -420,37 +420,51 @@ void accelerometer()
 	BMA150_XYZ xyz;
 	char xyArr[20] = {0};	
 	BYTE lsb, msb;
-	int i;	
+	int i, val;
 
+
+	//accX
 	for(i=13;i <= 40;i++)
 		oledWriteChar1x(0x20, 4 + 0xB0, i);
 
-	//accX
 	lsb = BMA150_ReadByte(BMA150_ACC_X_LSB); 	
 	msb = BMA150_ReadByte(BMA150_ACC_X_MSB); 	
 	xyz.x = 0;
-	xyz.x = (short)msb << 8;
+	xyz.x = (short)msb << 9;
 	xyz.x |= lsb;
 	xyz.x >>= 6;
 	if(xyz.x & 0x200)
 	{
 		xyz.x |= 0xFC00;
 	}
-	xyz.x = xyz.x << 2;
-	xyz.x = xyz.x | lsb;
-	
+
+	xyz.x = xyz.x << 2;		
+
 	itoa(xyz.x, xyArr);
 	oledPutROMString((ROM_STRING)"X: ",4,0);
 	oledPutString(xyArr, 4, 15);
 
+	//get max x
+	for(i=65;i <= 110;i++)
+		oledWriteChar1x(0x20, 4 + 0xB0, i);
+
+	val = atoi(xyArr);
+	if(val > counterX)
+	{
+		counterX = xyz.x;
+	}
+	
+	itoa(counterX, xyArr);
+	oledPutString(xyArr, 4, 70);
+
+	//accY
 	for(i=13;i <= 40;i++)
 		oledWriteChar1x(0x20, 5 + 0xB0, i);
 
-	//accY
 	lsb = BMA150_ReadByte(BMA150_ACC_Y_LSB); 	
 	msb = BMA150_ReadByte(BMA150_ACC_Y_MSB); 	
 	xyz.y = 0;
-	xyz.y = (short)msb << 8;
+	xyz.y = (short)msb << 9;
 	xyz.y |= lsb;
 	xyz.y >>= 6;
 	if(xyz.y & 0x200)
@@ -458,14 +472,23 @@ void accelerometer()
 		xyz.y |= 0xFC00;
 	}
 	xyz.x = xyz.x << 2;
-	xyz.x = xyz.x | lsb;
-	
+
 	itoa(xyz.y, xyArr);
 	oledPutROMString((ROM_STRING)"Y: ",5,0);
 	oledPutString(xyArr, 5, 15);
+
+	//get max y
+	for(i=65;i <= 110;i++)
+		oledWriteChar1x(0x20, 5 + 0xB0, i);
+
+	val = atoi(xyArr);
+	if(val > counterY)
+	{
+		counterY = xyz.y;
+	}
 	
-
-
+	itoa(counterY, xyArr);
+	oledPutString(xyArr, 5, 70);
 }
 
 void temperature()
