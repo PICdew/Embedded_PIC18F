@@ -1,5 +1,5 @@
 MPLINK 5.00, LINKER
-Linker Map File - Created Wed Jan 02 14:22:40 2019
+Linker Map File - Created Wed Jan 02 14:26:40 2019
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
@@ -20,27 +20,27 @@ REMAPPED_HIGH_INTERRUPT_VECTOR       code   0x00a008    program   0x000006
             .code_c018i.o       code   0x00a018    program   0x000000
 REMAPPED_LOW_INTERRUPT_VECTOR       code   0x00a018    program   0x000006
                    .cinit    romdata   0x00a01e    program   0x00001a
-             .code_main.o       code   0x00a038    program   0x000bdc
-             .code_oled.o       code   0x00ac14    program   0x000672
-                     PROG       code   0x00b286    program   0x000286
-           .code_BMA150.o       code   0x00b50c    program   0x000274
-                   STDLIB       code   0x00b780    program   0x00021e
-           .code_mtouch.o       code   0x00b99e    program   0x0001e4
-          .romdata_oled.o    romdata   0x00bb82    program   0x0001db
-         .romdata_c018i.o    romdata   0x00bd5d    program   0x000000
-        .romdata___init.o    romdata   0x00bd5d    program   0x000000
-      .romdata_fxd1616u.o    romdata   0x00bd5d    program   0x000000
-          .romdata_main.o    romdata   0x00bd5d    program   0x000000
-    .romdata_soft_start.o    romdata   0x00bd5d    program   0x000000
-    .idata_soft_start.o_i    romdata   0x00bd5d    program   0x000001
-        .romdata_mtouch.o    romdata   0x00bd5d    program   0x000000
-        .romdata_BMA150.o    romdata   0x00bd5d    program   0x000000
-       .code_soft_start.o       code   0x00bd5e    program   0x0000f0
-               _cinit_scn       code   0x00be4e    program   0x00009e
-         .code_fxd1616u.o       code   0x00beec    program   0x00002c
-                    .code       code   0x00bf18    program   0x000020
-             _startup_scn       code   0x00bf38    program   0x00001c
-             .stringtable    romdata   0x00bf54    program   0x000018
+             .code_main.o       code   0x00a038    program   0x000c08
+             .code_oled.o       code   0x00ac40    program   0x000672
+                     PROG       code   0x00b2b2    program   0x000286
+           .code_BMA150.o       code   0x00b538    program   0x000274
+                   STDLIB       code   0x00b7ac    program   0x00021e
+           .code_mtouch.o       code   0x00b9ca    program   0x0001e4
+          .romdata_oled.o    romdata   0x00bbae    program   0x0001db
+         .romdata_c018i.o    romdata   0x00bd89    program   0x000000
+        .romdata___init.o    romdata   0x00bd89    program   0x000000
+      .romdata_fxd1616u.o    romdata   0x00bd89    program   0x000000
+          .romdata_main.o    romdata   0x00bd89    program   0x000000
+    .romdata_soft_start.o    romdata   0x00bd89    program   0x000000
+    .idata_soft_start.o_i    romdata   0x00bd89    program   0x000001
+        .romdata_mtouch.o    romdata   0x00bd89    program   0x000000
+        .romdata_BMA150.o    romdata   0x00bd89    program   0x000000
+       .code_soft_start.o       code   0x00bd8a    program   0x0000f0
+               _cinit_scn       code   0x00be7a    program   0x00009e
+         .code_fxd1616u.o       code   0x00bf18    program   0x00002c
+                    .code       code   0x00bf44    program   0x000020
+             _startup_scn       code   0x00bf64    program   0x00001c
+             .stringtable    romdata   0x00bf80    program   0x000018
       .config_fff8_main.o    romdata   0x00fff8    program   0x000001
       .config_fff9_main.o    romdata   0x00fff9    program   0x000001
       .config_fffa_main.o    romdata   0x00fffa    program   0x000001
@@ -90,93 +90,93 @@ REMAPPED_LOW_INTERRUPT_VECTOR       code   0x00a018    program   0x000006
                             0x000008    0x00000d      
                             0x000018    0x00001d      
                             0x00a000    0x00a016      
-                            0x00a018    0x00bf6b      
+                            0x00a018    0x00bf97      
                             0x00fff8    0x00ffff      
-            8069 out of 65538 program addresses used, program memory utilization is 12%
+            8113 out of 65538 program addresses used, program memory utilization is 12%
 
 
 
                               Symbols - Sorted by Name
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-          AppPowerDisable   0x00bdaa    program     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
-           AppPowerEnable   0x00bd5e    program     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
-            AppPowerReady   0x00bdb6    program     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
-          BMA150_ReadByte   0x00b6d2    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
-         BMA150_WriteByte   0x00b5f0    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
+          AppPowerDisable   0x00bdd6    program     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
+           AppPowerEnable   0x00bd8a    program     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
+            AppPowerReady   0x00bde2    program     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
+          BMA150_ReadByte   0x00b6fe    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
+         BMA150_WriteByte   0x00b61c    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
        CheckButtonPressed   0x00a09e    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
-                   D1616S   0x00b378    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                D1616SNEG   0x00b386    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                 D1616SOK   0x00b382    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                  D1616SX   0x00b398    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                  DA1616S   0x00b368    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                  DelayMs   0x00ac14    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
-                 FLO1632S   0x00b28a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast16FP.asm
-                 FLO1632U   0x00b286    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast16FP.asm
-                    FPD32   0x00b2b0    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
-                 FXD1616S   0x00b356    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                 FXD1616U   0x00beec    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616u.c
-              FillDisplay   0x00ae38    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
+                   D1616S   0x00b3a4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                D1616SNEG   0x00b3b2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                 D1616SOK   0x00b3ae    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                  D1616SX   0x00b3c4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                  DA1616S   0x00b394    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                  DelayMs   0x00ac40    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
+                 FLO1632S   0x00b2b6    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast16FP.asm
+                 FLO1632U   0x00b2b2    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast16FP.asm
+                    FPD32   0x00b2dc    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
+                 FXD1616S   0x00b382    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                 FXD1616U   0x00bf18    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616u.c
+              FillDisplay   0x00ae64    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
                  High_ISR   0x000008    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
-                  INT3216   0x00b3a2    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                  InitADC   0x00b9b6    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-               InitBma150   0x00b50c    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
-                 InitCTMU   0x00b99e    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+                  INT3216   0x00b3ce    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                  InitADC   0x00b9e2    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+               InitBma150   0x00b538    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
+                 InitCTMU   0x00b9ca    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
          InitializeSystem   0x00a08a    program     static D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
                   Low_ISR   0x000018    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
-                  OneByte   0x00b98c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itobcd.asm
-                ProcLower   0x00b940    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
-                ProcUpper   0x00b936    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
+                  OneByte   0x00b9b8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itobcd.asm
+                ProcLower   0x00b96c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
+                ProcUpper   0x00b962    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
         Remapped_High_ISR   0x00a008    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
          Remapped_Low_ISR   0x00a018    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
-              ResetDevice   0x00ac6e    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
-              SpiPinRemap   0x00b5cc    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
-                 TstLower   0x00b92a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
-                 TstUpper   0x00b924    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
+              ResetDevice   0x00ac9a    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
+              SpiPinRemap   0x00b5f8    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
+                 TstLower   0x00b956    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
+                 TstUpper   0x00b950    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
                  UserInit   0x00a070    program     static D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
-             WriteCommand   0x00ade8    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
-                WriteData   0x00ae10    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
+             WriteCommand   0x00ae14    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
+                WriteData   0x00ae3c    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
   YourHighPriorityISRCode   0x00a038    program     static D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
    YourLowPriorityISRCode   0x00a04a    program     static D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
-                 __FpExit   0x00b40c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-                 __FpPack   0x00b438    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-            __FpReturnNaN   0x00b400    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-         __FpReturnNegInf   0x00b412    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-        __FpReturnNegZero   0x00b42a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-         __FpReturnPosInf   0x00b418    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-        __FpReturnPosZero   0x00b432    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-        __FpReturnSignInf   0x00b40e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-       __FpReturnSignZero   0x00b426    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-              __FpReturnW   0x00b490    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-              __FpUnPackA   0x00b4b0    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-              __FpUnPackB   0x00b4e0    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-         ___else_lbl00009   0x00b6ba    program     static                          
-           ___if_lbl00001   0x00b552    program     static                          
-           ___if_lbl00005   0x00b618    program     static                          
-           ___if_lbl00008   0x00b6c2    program     static                          
+                 __FpExit   0x00b438    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+                 __FpPack   0x00b464    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+            __FpReturnNaN   0x00b42c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+         __FpReturnNegInf   0x00b43e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+        __FpReturnNegZero   0x00b456    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+         __FpReturnPosInf   0x00b444    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+        __FpReturnPosZero   0x00b45e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+        __FpReturnSignInf   0x00b43a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+       __FpReturnSignZero   0x00b452    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+              __FpReturnW   0x00b4bc    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+              __FpUnPackA   0x00b4dc    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+              __FpUnPackB   0x00b50c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+         ___else_lbl00009   0x00b6e6    program     static                          
+           ___if_lbl00001   0x00b57e    program     static                          
+           ___if_lbl00005   0x00b644    program     static                          
+           ___if_lbl00008   0x00b6ee    program     static                          
        ___return_lbl00000   0x00a004    program     static                          
-       ___return_lbl00000   0x00bf16    program     static                          
+       ___return_lbl00000   0x00bf42    program     static                          
        ___return_lbl00000   0x000004    program     static                          
-       ___return_lbl00000   0x00b5b8    program     static                          
-       ___return_lbl00001   0x00bf52    program     static                          
+       ___return_lbl00000   0x00b5e4    program     static                          
+       ___return_lbl00001   0x00bf7e    program     static                          
        ___return_lbl00001   0x00a00c    program     static                          
-       ___return_lbl00002   0x00beea    program     static                          
+       ___return_lbl00002   0x00bf16    program     static                          
        ___return_lbl00002   0x00a01c    program     static                          
-       ___return_lbl00003   0x00baac    program     static                          
+       ___return_lbl00003   0x00bad8    program     static                          
        ___return_lbl00003   0x00000c    program     static                          
-       ___return_lbl00003   0x00b6c8    program     static                          
+       ___return_lbl00003   0x00b6f4    program     static                          
        ___return_lbl00004   0x00001c    program     static                          
-       ___return_lbl00012   0x00b778    program     static                          
-        ___while_lbl00004   0x00ba8e    program     static                          
-        ___while_lbl00005   0x00ba92    program     static                          
-        ___while_lbl00006   0x00b622    program     static                          
-        ___while_lbl00007   0x00b626    program     static                          
-        ___while_lbl00010   0x00b6c2    program     static                          
-        ___while_lbl00011   0x00b6c6    program     static                          
-        ___while_lbl00013   0x00b6e6    program     static                          
-        ___while_lbl00014   0x00b6ea    program     static                          
-        ___while_lbl00015   0x00b76e    program     static                          
-        ___while_lbl00016   0x00b772    program     static                          
+       ___return_lbl00012   0x00b7a4    program     static                          
+        ___while_lbl00004   0x00baba    program     static                          
+        ___while_lbl00005   0x00babe    program     static                          
+        ___while_lbl00006   0x00b64e    program     static                          
+        ___while_lbl00007   0x00b652    program     static                          
+        ___while_lbl00010   0x00b6ee    program     static                          
+        ___while_lbl00011   0x00b6f2    program     static                          
+        ___while_lbl00013   0x00b712    program     static                          
+        ___while_lbl00014   0x00b716    program     static                          
+        ___while_lbl00015   0x00b79a    program     static                          
+        ___while_lbl00016   0x00b79e    program     static                          
                __config_0   0x00fff8    program     static D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
                __config_1   0x00fff9    program     static D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
                __config_2   0x00fffa    program     static D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
@@ -186,97 +186,97 @@ REMAPPED_LOW_INTERRUPT_VECTOR       code   0x00a018    program   0x000006
                __config_6   0x00fffe    program     static D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
                __config_7   0x00ffff    program     static D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
                    __init   0x00a006    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
-                   __pa_0   0x00bb36    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-                   __pa_1   0x00bb46    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-                   __pa_2   0x00bb5a    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-                   __pa_3   0x00bb6e    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-               __string_0   0x00bf63    program     static D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
-               __string_1   0x00bf5f    program     static D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
-               __string_2   0x00bf5b    program     static D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
-               __string_3   0x00bf54    program     static D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
-               __tmplbl_0   0x00b60c    program     static                          
-               __tmplbl_1   0x00b604    program     static                          
-            __zero_memory   0x00bf18    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                _do_cinit   0x00be4e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                   __pa_0   0x00bb62    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+                   __pa_1   0x00bb72    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+                   __pa_2   0x00bb86    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+                   __pa_3   0x00bb9a    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+               __string_0   0x00bf8f    program     static D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
+               __string_1   0x00bf8b    program     static D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
+               __string_2   0x00bf87    program     static D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
+               __string_3   0x00bf80    program     static D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
+               __tmplbl_0   0x00b638    program     static                          
+               __tmplbl_1   0x00b630    program     static                          
+            __zero_memory   0x00bf44    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                _do_cinit   0x00be7a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                    _entry   0x000000    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                    _reset   0x00a000    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
-                 _startup   0x00bf38    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                 _startup   0x00bf64    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
             accelerometer   0x00a4ac    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
-                     atoi   0x00b780    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
-                compare_l   0x00bf2e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                copy_loop   0x00bec0    program     static                          
-            copy_one_byte   0x00bec6    program     static                          
-                     done   0x00beea    program     static                          
-             done_copying   0x00bed4    program     static                          
-                  endloop   0x00bf12    program     static                          
-                g_pucFont   0x00bb82    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
-                   itoBCD   0x00b94a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itobcd.asm
-                     itoa   0x00b86a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
-                 jANotInf   0x00b2ce    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
-                jANotZero   0x00b2e2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
-                     jDo1   0x00b8f0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
-                     jDo2   0x00b8ec    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
-                     jDo3   0x00b8e8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
-                     jDo4   0x00b8e4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
-                     jDo5   0x00b8e0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
-                     jEnd   0x00b988    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itobcd.asm
-                     jEnd   0x00b83e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
-                 jEndLoop   0x00b826    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
-                    jExit   0x00b3fe    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                jI2F16Beg   0x00b29a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast16FP.asm
-                    jLoop   0x00b962    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itobcd.asm
-                    jLoop   0x00b3de    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                    jLoop   0x00b7d8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
-                    jLoop   0x00b30a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
-                jLoopExit   0x00b3ee    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                     jMax   0x00b3b2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                  jMaxNeg   0x00b3c0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                  jMaxPos   0x00b3b6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                    jNext   0x00b330    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
-                jNoAdjust   0x00b32e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
-                  jNotInf   0x00b3ce    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                  jPkLoop   0x00b446    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-             jPkRoundDone   0x00b490    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-               jPkRoundIt   0x00b478    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-             jPkShiftDone   0x00b462    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-           jReturnPosInf0   0x00b41c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-              jSignedZero   0x00b2d8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
-                  jSkipWS   0x00b7ae    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
-                 jSkipWS1   0x00b7c0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
-                jTstLowZ1   0x00b934    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
-                 jTstSign   0x00b7c4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
-                jTstSign1   0x00b7d0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
-                jTstSign1   0x00b896    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
-                jTstSign2   0x00b7d6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
-                jTstSign3   0x00b7d8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
-                  jUnpkA1   0x00b4ba    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                  jUnpkA2   0x00b4d2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                 jUnpkANZ   0x00b4c8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                  jUnpkB1   0x00b4ea    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                  jUnpkB2   0x00b502    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                 jUnpkBNZ   0x00b4f8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                 jUnpkNaN   0x00b4dc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                    jZero   0x00b3c8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-               jZero1and2   0x00b420    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-                     loop   0x00bf48    program     static                          
-                     loop   0x00bef6    program     static                          
-                   loop_h   0x00bf26    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                   loop_l   0x00bf30    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-          mTouchCalibrate   0x00bac0    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-               mTouchInit   0x00b9ea    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-         mTouchReadButton   0x00b9f0    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-                     main   0x00abf8    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
-             oledPutImage   0x00b11e    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
-         oledPutROMString   0x00b03c    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
-            oledPutString   0x00b0b0    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
-           oledRepeatByte   0x00b1d8    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
-          oledWriteChar1x   0x00afe4    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
-         oledWriteCharRaw   0x00aeaa    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
+                     atoi   0x00b7ac    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
+                compare_l   0x00bf5a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                copy_loop   0x00beec    program     static                          
+            copy_one_byte   0x00bef2    program     static                          
+                     done   0x00bf16    program     static                          
+             done_copying   0x00bf00    program     static                          
+                  endloop   0x00bf3e    program     static                          
+                g_pucFont   0x00bbae    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
+                   itoBCD   0x00b976    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itobcd.asm
+                     itoa   0x00b896    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
+                 jANotInf   0x00b2fa    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
+                jANotZero   0x00b30e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
+                     jDo1   0x00b91c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
+                     jDo2   0x00b918    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
+                     jDo3   0x00b914    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
+                     jDo4   0x00b910    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
+                     jDo5   0x00b90c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
+                     jEnd   0x00b9b4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itobcd.asm
+                     jEnd   0x00b86a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
+                 jEndLoop   0x00b852    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
+                    jExit   0x00b42a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                jI2F16Beg   0x00b2c6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast16FP.asm
+                    jLoop   0x00b98e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itobcd.asm
+                    jLoop   0x00b40a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                    jLoop   0x00b804    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
+                    jLoop   0x00b336    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
+                jLoopExit   0x00b41a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                     jMax   0x00b3de    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                  jMaxNeg   0x00b3ec    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                  jMaxPos   0x00b3e2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                    jNext   0x00b35c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
+                jNoAdjust   0x00b35a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
+                  jNotInf   0x00b3fa    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                  jPkLoop   0x00b472    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+             jPkRoundDone   0x00b4bc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+               jPkRoundIt   0x00b4a4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+             jPkShiftDone   0x00b48e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+           jReturnPosInf0   0x00b448    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+              jSignedZero   0x00b304    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
+                  jSkipWS   0x00b7da    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
+                 jSkipWS1   0x00b7ec    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
+                jTstLowZ1   0x00b960    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
+                 jTstSign   0x00b7f0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
+                jTstSign1   0x00b7fc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
+                jTstSign1   0x00b8c2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
+                jTstSign2   0x00b802    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
+                jTstSign3   0x00b804    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
+                  jUnpkA1   0x00b4e6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                  jUnpkA2   0x00b4fe    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                 jUnpkANZ   0x00b4f4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                  jUnpkB1   0x00b516    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                  jUnpkB2   0x00b52e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                 jUnpkBNZ   0x00b524    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                 jUnpkNaN   0x00b508    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                    jZero   0x00b3f4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+               jZero1and2   0x00b44c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+                     loop   0x00bf74    program     static                          
+                     loop   0x00bf22    program     static                          
+                   loop_h   0x00bf52    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                   loop_l   0x00bf5c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+          mTouchCalibrate   0x00baec    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+               mTouchInit   0x00ba16    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+         mTouchReadButton   0x00ba1c    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+                     main   0x00ac24    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
+             oledPutImage   0x00b14a    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
+         oledPutROMString   0x00b068    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
+            oledPutString   0x00b0dc    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
+           oledRepeatByte   0x00b204    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
+          oledWriteChar1x   0x00b010    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
+         oledWriteCharRaw   0x00aed6    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
             potentiometer   0x00a150    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
-              temperature   0x00ab02    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
-                     test   0x00be68    program     static                          
+              temperature   0x00ab2e    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
+                     test   0x00be94    program     static                          
              touchButtons   0x00a2ec    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
-               zero_block   0x00bf26    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+               zero_block   0x00bf52    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    ADCON0   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                ADCON0bits   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    ADCON1   0x000fc1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
@@ -775,155 +775,155 @@ REMAPPED_LOW_INTERRUPT_VECTOR       code   0x00a018    program   0x000006
             potentiometer   0x00a150    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
              touchButtons   0x00a2ec    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
             accelerometer   0x00a4ac    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
-              temperature   0x00ab02    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
-                     main   0x00abf8    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
-                  DelayMs   0x00ac14    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
-              ResetDevice   0x00ac6e    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
-             WriteCommand   0x00ade8    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
-                WriteData   0x00ae10    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
-              FillDisplay   0x00ae38    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
-         oledWriteCharRaw   0x00aeaa    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
-          oledWriteChar1x   0x00afe4    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
-         oledPutROMString   0x00b03c    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
-            oledPutString   0x00b0b0    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
-             oledPutImage   0x00b11e    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
-           oledRepeatByte   0x00b1d8    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
-                 FLO1632U   0x00b286    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast16FP.asm
-                 FLO1632S   0x00b28a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast16FP.asm
-                jI2F16Beg   0x00b29a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast16FP.asm
-                    FPD32   0x00b2b0    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
-                 jANotInf   0x00b2ce    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
-              jSignedZero   0x00b2d8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
-                jANotZero   0x00b2e2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
-                    jLoop   0x00b30a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
-                jNoAdjust   0x00b32e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
-                    jNext   0x00b330    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
-                 FXD1616S   0x00b356    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                  DA1616S   0x00b368    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                   D1616S   0x00b378    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                 D1616SOK   0x00b382    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                D1616SNEG   0x00b386    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                  D1616SX   0x00b398    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                  INT3216   0x00b3a2    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                     jMax   0x00b3b2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                  jMaxPos   0x00b3b6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                  jMaxNeg   0x00b3c0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                    jZero   0x00b3c8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                  jNotInf   0x00b3ce    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                    jLoop   0x00b3de    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                jLoopExit   0x00b3ee    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                    jExit   0x00b3fe    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-            __FpReturnNaN   0x00b400    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-                 __FpExit   0x00b40c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-        __FpReturnSignInf   0x00b40e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-         __FpReturnNegInf   0x00b412    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-         __FpReturnPosInf   0x00b418    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-           jReturnPosInf0   0x00b41c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-               jZero1and2   0x00b420    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-       __FpReturnSignZero   0x00b426    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-        __FpReturnNegZero   0x00b42a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-        __FpReturnPosZero   0x00b432    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-                 __FpPack   0x00b438    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-                  jPkLoop   0x00b446    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-             jPkShiftDone   0x00b462    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-               jPkRoundIt   0x00b478    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-              __FpReturnW   0x00b490    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-             jPkRoundDone   0x00b490    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-              __FpUnPackA   0x00b4b0    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                  jUnpkA1   0x00b4ba    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                 jUnpkANZ   0x00b4c8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                  jUnpkA2   0x00b4d2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                 jUnpkNaN   0x00b4dc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-              __FpUnPackB   0x00b4e0    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                  jUnpkB1   0x00b4ea    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                 jUnpkBNZ   0x00b4f8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                  jUnpkB2   0x00b502    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-               InitBma150   0x00b50c    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
-           ___if_lbl00001   0x00b552    program     static                          
-       ___return_lbl00000   0x00b5b8    program     static                          
-              SpiPinRemap   0x00b5cc    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
-         BMA150_WriteByte   0x00b5f0    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
-               __tmplbl_1   0x00b604    program     static                          
-               __tmplbl_0   0x00b60c    program     static                          
-           ___if_lbl00005   0x00b618    program     static                          
-        ___while_lbl00006   0x00b622    program     static                          
-        ___while_lbl00007   0x00b626    program     static                          
-         ___else_lbl00009   0x00b6ba    program     static                          
-           ___if_lbl00008   0x00b6c2    program     static                          
-        ___while_lbl00010   0x00b6c2    program     static                          
-        ___while_lbl00011   0x00b6c6    program     static                          
-       ___return_lbl00003   0x00b6c8    program     static                          
-          BMA150_ReadByte   0x00b6d2    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
-        ___while_lbl00013   0x00b6e6    program     static                          
-        ___while_lbl00014   0x00b6ea    program     static                          
-        ___while_lbl00015   0x00b76e    program     static                          
-        ___while_lbl00016   0x00b772    program     static                          
-       ___return_lbl00012   0x00b778    program     static                          
-                     atoi   0x00b780    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
-                  jSkipWS   0x00b7ae    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
-                 jSkipWS1   0x00b7c0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
-                 jTstSign   0x00b7c4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
-                jTstSign1   0x00b7d0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
-                jTstSign2   0x00b7d6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
-                jTstSign3   0x00b7d8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
-                    jLoop   0x00b7d8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
-                 jEndLoop   0x00b826    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
-                     jEnd   0x00b83e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
-                     itoa   0x00b86a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
-                jTstSign1   0x00b896    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
-                     jDo5   0x00b8e0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
-                     jDo4   0x00b8e4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
-                     jDo3   0x00b8e8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
-                     jDo2   0x00b8ec    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
-                     jDo1   0x00b8f0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
-                 TstUpper   0x00b924    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
-                 TstLower   0x00b92a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
-                jTstLowZ1   0x00b934    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
-                ProcUpper   0x00b936    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
-                ProcLower   0x00b940    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
-                   itoBCD   0x00b94a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itobcd.asm
-                    jLoop   0x00b962    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itobcd.asm
-                     jEnd   0x00b988    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itobcd.asm
-                  OneByte   0x00b98c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itobcd.asm
-                 InitCTMU   0x00b99e    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-                  InitADC   0x00b9b6    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-               mTouchInit   0x00b9ea    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-         mTouchReadButton   0x00b9f0    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-        ___while_lbl00004   0x00ba8e    program     static                          
-        ___while_lbl00005   0x00ba92    program     static                          
-       ___return_lbl00003   0x00baac    program     static                          
-          mTouchCalibrate   0x00bac0    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-                   __pa_0   0x00bb36    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-                   __pa_1   0x00bb46    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-                   __pa_2   0x00bb5a    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-                   __pa_3   0x00bb6e    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-                g_pucFont   0x00bb82    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
-           AppPowerEnable   0x00bd5e    program     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
-          AppPowerDisable   0x00bdaa    program     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
-            AppPowerReady   0x00bdb6    program     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
-                _do_cinit   0x00be4e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     test   0x00be68    program     static                          
-                copy_loop   0x00bec0    program     static                          
-            copy_one_byte   0x00bec6    program     static                          
-             done_copying   0x00bed4    program     static                          
-                     done   0x00beea    program     static                          
-       ___return_lbl00002   0x00beea    program     static                          
-                 FXD1616U   0x00beec    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616u.c
-                     loop   0x00bef6    program     static                          
-                  endloop   0x00bf12    program     static                          
-       ___return_lbl00000   0x00bf16    program     static                          
-            __zero_memory   0x00bf18    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-               zero_block   0x00bf26    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                   loop_h   0x00bf26    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                compare_l   0x00bf2e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                   loop_l   0x00bf30    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                 _startup   0x00bf38    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     loop   0x00bf48    program     static                          
-       ___return_lbl00001   0x00bf52    program     static                          
-               __string_3   0x00bf54    program     static D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
-               __string_2   0x00bf5b    program     static D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
-               __string_1   0x00bf5f    program     static D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
-               __string_0   0x00bf63    program     static D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
+              temperature   0x00ab2e    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
+                     main   0x00ac24    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
+                  DelayMs   0x00ac40    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
+              ResetDevice   0x00ac9a    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
+             WriteCommand   0x00ae14    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
+                WriteData   0x00ae3c    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
+              FillDisplay   0x00ae64    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
+         oledWriteCharRaw   0x00aed6    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
+          oledWriteChar1x   0x00b010    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
+         oledPutROMString   0x00b068    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
+            oledPutString   0x00b0dc    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
+             oledPutImage   0x00b14a    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
+           oledRepeatByte   0x00b204    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
+                 FLO1632U   0x00b2b2    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast16FP.asm
+                 FLO1632S   0x00b2b6    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast16FP.asm
+                jI2F16Beg   0x00b2c6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast16FP.asm
+                    FPD32   0x00b2dc    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
+                 jANotInf   0x00b2fa    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
+              jSignedZero   0x00b304    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
+                jANotZero   0x00b30e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
+                    jLoop   0x00b336    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
+                jNoAdjust   0x00b35a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
+                    jNext   0x00b35c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
+                 FXD1616S   0x00b382    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                  DA1616S   0x00b394    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                   D1616S   0x00b3a4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                 D1616SOK   0x00b3ae    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                D1616SNEG   0x00b3b2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                  D1616SX   0x00b3c4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                  INT3216   0x00b3ce    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                     jMax   0x00b3de    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                  jMaxPos   0x00b3e2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                  jMaxNeg   0x00b3ec    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                    jZero   0x00b3f4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                  jNotInf   0x00b3fa    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                    jLoop   0x00b40a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                jLoopExit   0x00b41a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                    jExit   0x00b42a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+            __FpReturnNaN   0x00b42c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+                 __FpExit   0x00b438    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+        __FpReturnSignInf   0x00b43a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+         __FpReturnNegInf   0x00b43e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+         __FpReturnPosInf   0x00b444    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+           jReturnPosInf0   0x00b448    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+               jZero1and2   0x00b44c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+       __FpReturnSignZero   0x00b452    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+        __FpReturnNegZero   0x00b456    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+        __FpReturnPosZero   0x00b45e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+                 __FpPack   0x00b464    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+                  jPkLoop   0x00b472    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+             jPkShiftDone   0x00b48e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+               jPkRoundIt   0x00b4a4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+              __FpReturnW   0x00b4bc    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+             jPkRoundDone   0x00b4bc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+              __FpUnPackA   0x00b4dc    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                  jUnpkA1   0x00b4e6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                 jUnpkANZ   0x00b4f4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                  jUnpkA2   0x00b4fe    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                 jUnpkNaN   0x00b508    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+              __FpUnPackB   0x00b50c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                  jUnpkB1   0x00b516    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                 jUnpkBNZ   0x00b524    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                  jUnpkB2   0x00b52e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+               InitBma150   0x00b538    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
+           ___if_lbl00001   0x00b57e    program     static                          
+       ___return_lbl00000   0x00b5e4    program     static                          
+              SpiPinRemap   0x00b5f8    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
+         BMA150_WriteByte   0x00b61c    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
+               __tmplbl_1   0x00b630    program     static                          
+               __tmplbl_0   0x00b638    program     static                          
+           ___if_lbl00005   0x00b644    program     static                          
+        ___while_lbl00006   0x00b64e    program     static                          
+        ___while_lbl00007   0x00b652    program     static                          
+         ___else_lbl00009   0x00b6e6    program     static                          
+           ___if_lbl00008   0x00b6ee    program     static                          
+        ___while_lbl00010   0x00b6ee    program     static                          
+        ___while_lbl00011   0x00b6f2    program     static                          
+       ___return_lbl00003   0x00b6f4    program     static                          
+          BMA150_ReadByte   0x00b6fe    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
+        ___while_lbl00013   0x00b712    program     static                          
+        ___while_lbl00014   0x00b716    program     static                          
+        ___while_lbl00015   0x00b79a    program     static                          
+        ___while_lbl00016   0x00b79e    program     static                          
+       ___return_lbl00012   0x00b7a4    program     static                          
+                     atoi   0x00b7ac    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
+                  jSkipWS   0x00b7da    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
+                 jSkipWS1   0x00b7ec    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
+                 jTstSign   0x00b7f0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
+                jTstSign1   0x00b7fc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
+                jTstSign2   0x00b802    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
+                jTstSign3   0x00b804    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
+                    jLoop   0x00b804    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
+                 jEndLoop   0x00b852    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
+                     jEnd   0x00b86a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\atoi.asm
+                     itoa   0x00b896    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
+                jTstSign1   0x00b8c2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
+                     jDo5   0x00b90c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
+                     jDo4   0x00b910    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
+                     jDo3   0x00b914    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
+                     jDo2   0x00b918    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
+                     jDo1   0x00b91c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
+                 TstUpper   0x00b950    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
+                 TstLower   0x00b956    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
+                jTstLowZ1   0x00b960    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
+                ProcUpper   0x00b962    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
+                ProcLower   0x00b96c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itoa.asm
+                   itoBCD   0x00b976    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itobcd.asm
+                    jLoop   0x00b98e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itobcd.asm
+                     jEnd   0x00b9b4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itobcd.asm
+                  OneByte   0x00b9b8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\itobcd.asm
+                 InitCTMU   0x00b9ca    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+                  InitADC   0x00b9e2    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+               mTouchInit   0x00ba16    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+         mTouchReadButton   0x00ba1c    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+        ___while_lbl00004   0x00baba    program     static                          
+        ___while_lbl00005   0x00babe    program     static                          
+       ___return_lbl00003   0x00bad8    program     static                          
+          mTouchCalibrate   0x00baec    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+                   __pa_0   0x00bb62    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+                   __pa_1   0x00bb72    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+                   __pa_2   0x00bb86    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+                   __pa_3   0x00bb9a    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+                g_pucFont   0x00bbae    program     extern D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\oled.c
+           AppPowerEnable   0x00bd8a    program     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
+          AppPowerDisable   0x00bdd6    program     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
+            AppPowerReady   0x00bde2    program     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
+                _do_cinit   0x00be7a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     test   0x00be94    program     static                          
+                copy_loop   0x00beec    program     static                          
+            copy_one_byte   0x00bef2    program     static                          
+             done_copying   0x00bf00    program     static                          
+                     done   0x00bf16    program     static                          
+       ___return_lbl00002   0x00bf16    program     static                          
+                 FXD1616U   0x00bf18    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616u.c
+                     loop   0x00bf22    program     static                          
+                  endloop   0x00bf3e    program     static                          
+       ___return_lbl00000   0x00bf42    program     static                          
+            __zero_memory   0x00bf44    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+               zero_block   0x00bf52    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                   loop_h   0x00bf52    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                compare_l   0x00bf5a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                   loop_l   0x00bf5c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                 _startup   0x00bf64    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     loop   0x00bf74    program     static                          
+       ___return_lbl00001   0x00bf7e    program     static                          
+               __string_3   0x00bf80    program     static D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
+               __string_2   0x00bf87    program     static D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
+               __string_1   0x00bf8b    program     static D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
+               __string_0   0x00bf8f    program     static D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
                __config_0   0x00fff8    program     static D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
                __config_1   0x00fff9    program     static D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c
                __config_2   0x00fffa    program     static D:\Workspace\Embeded\mplab\Shenkar\Lab4 - HW\main.c

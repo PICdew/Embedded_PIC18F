@@ -498,8 +498,9 @@ void accelerometer()
 	if(xyz.z & 0x200)
 		xyz.z |= 0xFC00;
 
+	itoa(xyz.z, xyArr);
 	val = atoi(xyArr);
-	if(val < 0)
+	if(val < -58)
 	{
 		counterY = 0;
 		counterX = 0;
