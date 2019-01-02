@@ -420,7 +420,7 @@ void accelerometer()
 	BMA150_XYZ xyz;
 	char xyArr[20] = {0};	
 	BYTE lsb, msb;
-	int i, val;
+	int i, val, repeat = 0;
 
 
 	//accX
@@ -430,13 +430,11 @@ void accelerometer()
 	lsb = BMA150_ReadByte(BMA150_ACC_X_LSB); 	
 	msb = BMA150_ReadByte(BMA150_ACC_X_MSB); 	
 	xyz.x = 0;
-	xyz.x = (short)msb << 9;
+	xyz.x = (short)msb << 8;
 	xyz.x |= lsb;
 	xyz.x >>= 6;
 	if(xyz.x & 0x200)
-	{
 		xyz.x |= 0xFC00;
-	}
 
 	xyz.x = xyz.x << 2;		
 
@@ -445,17 +443,17 @@ void accelerometer()
 	oledPutString(xyArr, 4, 15);
 
 	//get max x
-	for(i=65;i <= 110;i++)
+	for(i=55;i <= 110;i++)
 		oledWriteChar1x(0x20, 4 + 0xB0, i);
 
 	val = atoi(xyArr);
 	if(val > counterX)
-	{
-		counterX = xyz.x;
-	}
+		counterX = val;
 	
-	itoa(counterX, xyArr);
-	oledPutString(xyArr, 4, 70);
+	oledWriteChar1x(0x5B, 4 + 0xB0,50);
+	oledWriteChar1x(0x5D, 4 + 0xB0,100);
+	repeat = counterX / 50;
+	oledRepeatByte(0x18,4,55, repeat);
 
 	//accY
 	for(i=13;i <= 40;i++)
@@ -464,13 +462,12 @@ void accelerometer()
 	lsb = BMA150_ReadByte(BMA150_ACC_Y_LSB); 	
 	msb = BMA150_ReadByte(BMA150_ACC_Y_MSB); 	
 	xyz.y = 0;
-	xyz.y = (short)msb << 9;
+	xyz.y = (short)msb << 8;
 	xyz.y |= lsb;
 	xyz.y >>= 6;
 	if(xyz.y & 0x200)
-	{
 		xyz.y |= 0xFC00;
-	}
+
 	xyz.x = xyz.x << 2;
 
 	itoa(xyz.y, xyArr);
@@ -478,17 +475,38 @@ void accelerometer()
 	oledPutString(xyArr, 5, 15);
 
 	//get max y
-	for(i=65;i <= 110;i++)
+	for(i=55;i <= 120;i++)
 		oledWriteChar1x(0x20, 5 + 0xB0, i);
 
 	val = atoi(xyArr);
 	if(val > counterY)
-	{
-		counterY = xyz.y;
-	}
+		counterY = val;
+
+	oledWriteChar1x(0x5B, 5 + 0xB0,50);
+	oledWriteChar1x(0x5D, 5 + 0xB0,100);
 	
-	itoa(counterY, xyArr);
-	oledPutString(xyArr, 5, 70);
+	repeat = counterY / 11.2;
+	oledRepeatByte(0x18,5,55, repeat);
+
+	//z
+	lsb = BMA150_ReadByte(BMA150_ACC_Z_LSB); //LSB	
+	msb = BMA150_ReadByte(BMA150_ACC_Z_MSB); //MSB	
+	xyz.z = 0;
+	xyz.z = (short)msb << 8;
+	xyz.z |= lsb;
+	xyz.z >>= 6;
+	if(xyz.z & 0x200)
+		xyz.z |= 0xFC00;
+
+	val = atoi(xyArr);
+	if(val < 0)
+	{
+		counterY = 0;
+		counterX = 0;
+		repeat = 1;
+		oledRepeatByte(0x18,5,55, repeat);
+		oledRepeatByte(0x18,4,55, repeat);
+	}
 }
 
 void temperature()
@@ -526,6 +544,8 @@ void temperature()
 void main(void)
 {
 
+
+
 	InitBma150();
     InitializeSystem();
 	
@@ -541,13 +561,15 @@ void main(void)
 		/**************************************L\R & scroll************************************/
 		touchButtons();
 
-		/******************************************temperature*************************************/
+		/******************************************temperature*********************************/
 		temperature();
 
-		/*******************************************accelerometer************************************/
+		/*******************************************accelerometer******************************/
 		accelerometer();
-		
-    }
+	
+  		
+
+  }
 }//end main
 
 

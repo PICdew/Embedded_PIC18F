@@ -334,6 +334,27 @@ void oledPutImage(rom unsigned char *ptr, unsigned char sizex, unsigned char siz
 
 
 
+oledRepeatByte(BYTE b, unsigned char page, unsigned char column, int repeat)
+{
+	int i = 0;
+
+	page = page + 0xB0;
+	WriteCommand(page);
+	column += OFFSET;
+	WriteCommand(0x00+(column&0x0F));
+	WriteCommand(0x10+((column>>4)&0x0F));
+
+	for(; i <= repeat;i++)
+	{
+			WriteData(b);
+	}
+	
+	WriteData(0x00);
+				
+}
+
+
+
 
 
 //////////////////////////////////////
