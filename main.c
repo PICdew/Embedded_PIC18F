@@ -228,7 +228,7 @@ BOOL CheckButtonPressed(void);
 #endif
 
 
-static int counterX = 0, counterY = 0;
+static int counterX = 0, counterY = 0;				//global int for accY & accX max value
 
 //	========================	Board Initialization Code	========================
 #pragma code
@@ -362,7 +362,7 @@ void potentiometer()
 	if(ADRES < 100){oledWriteChar1x(0x20, 0 + 0xB0, 12);}
 	if(ADRES < 10){oledWriteChar1x(0x20, 0 + 0xB0, 6);}
 
-	//bar graph
+	//graph bar
 	oledWriteChar1x(0x5B, 0 + 0xB0,30);
 	oledWriteChar1x(0x5D, 0 + 0xB0,80);
 
@@ -387,7 +387,7 @@ void touchButtons()
 	left   = mTouchReadButton(3);
 	scrollU = mTouchReadButton(1);
 	scrollD = mTouchReadButton(2);
-	ADCON0 = 0b00010011;								
+	ADCON0 = 0b00010011;								//potentiometer declire again 								
 
 	oledWriteChar1x(0x79, 2 + 0xB0, 11*10);
 
@@ -425,7 +425,7 @@ void accelerometer()
 
 	//accX
 	for(i=13;i <= 40;i++)
-		oledWriteChar1x(0x20, 4 + 0xB0, i);
+		oledWriteChar1x(0x20, 4 + 0xB0, i);						//clear garbage oled parameter
 
 	lsb = BMA150_ReadByte(BMA150_ACC_X_LSB); 	
 	msb = BMA150_ReadByte(BMA150_ACC_X_MSB); 	
@@ -437,7 +437,7 @@ void accelerometer()
 		xyz.x |= 0xFC00;
 
 	xyz.x = xyz.x << 2;		
-
+	
 	itoa(xyz.x, xyArr);
 	oledPutROMString((ROM_STRING)"X: ",4,0);
 	oledPutString(xyArr, 4, 15);
@@ -450,6 +450,7 @@ void accelerometer()
 	if(val > counterX)
 		counterX = val;
 	
+	//graph bar X
 	oledWriteChar1x(0x5B, 4 + 0xB0,50);
 	oledWriteChar1x(0x5D, 4 + 0xB0,100);
 	repeat = counterX / 50;
@@ -482,9 +483,9 @@ void accelerometer()
 	if(val > counterY)
 		counterY = val;
 
+	//graph bar Y
 	oledWriteChar1x(0x5B, 5 + 0xB0,50);
 	oledWriteChar1x(0x5D, 5 + 0xB0,100);
-	
 	repeat = counterY / 11.2;
 	oledRepeatByte(0x18,5,55, repeat);
 
@@ -500,6 +501,8 @@ void accelerometer()
 
 	itoa(xyz.z, xyArr);
 	val = atoi(xyArr);
+
+	//chack if microchip is upside down
 	if(val < -58)
 	{
 		counterY = 0;
